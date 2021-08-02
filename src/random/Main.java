@@ -17,21 +17,20 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //creando scanner   
+        Random n = new Random();
         Scanner sc = new Scanner(System.in);
-        int vidas = 3, num = 1;
-        int numeroAleatorio = 1;
-        //Variable que genera los numeros aleatorios
-        numeroAleatorio = (int) (Math.random() * 10 + 1);
-        while (vidas > 0 && num != numeroAleatorio) {
-            System.out.println("Ingrese un numero");
-            num = sc.nextInt();
+        System.out.println("Ingrese un numero");
+        int num = sc.nextInt();
+        int vidas = 3;
+        int numeroAleatorio = n.nextInt(5) + 1;
+        while (vidas > 0) {
             if (num == numeroAleatorio) {
                 System.out.println("Felicidades as acertado");
+                break;
             } else if (num != numeroAleatorio) {
                 System.out.println("NUMERO INCORRECTO");
-                    vidas--;
-                } 
+                vidas--;
+            }
             if (vidas == 0) {
                 System.out.println("Perdiste el numero es: " + numeroAleatorio);
             }
